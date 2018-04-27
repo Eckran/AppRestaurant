@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  AppRestaurant
-//
-//  Created by Romain Gary on 26/04/2018.
-//  Copyright © 2018 Romain Gary. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
@@ -18,27 +10,26 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var FoodDescInput: UITextField!
     @IBOutlet weak var GlutenSwitch: UISwitch!
     @IBOutlet weak var VeganSwitch: UISwitch!
-    @IBOutlet weak var FoodUrlInput: UITextField!
     @IBOutlet weak var FoodButtonAdd: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         
         configureUi()
         self.FoodNameInput.delegate = self
         self.FoodPriceInput.delegate = self
         self.FoodDescInput.delegate = self
-        self.FoodUrlInput.delegate = self
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func AddNewItem(_ sender: UIButton) {
